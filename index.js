@@ -48,8 +48,12 @@ function setup() {
 
   /*Calculate the number of columns and rows */
   columns = floor((windowWidth * 0.75) / unitLength);
-  rows = floor((windowHeight * 0.75 - 50) / unitLength);
 
+  rows = floor((windowHeight * 0.75 - 50) / unitLength);
+  console.log("Window size:", { windowWidth, windowHeight });
+  console.log("Window height 0.75:", windowHeight * 0.75 - 50);
+  console.log("Window width 0.75:", windowWidth * 0.75);
+  console.log("column and rows:", { columns, rows });
   /*Making both currentBoard and nextBoard 2-dimensional matrix that has (columns * rows) boxes. */
   currentBoard = [];
   nextBoard = [];
@@ -206,7 +210,12 @@ function mouseDragged() {
   /**
    * If the mouse coordinate is outside the board
    */
-  if (mouseX > unitLength * columns || mouseY > unitLength * rows) {
+  if (
+    mouseX < 0 ||
+    mouseY < 0 ||
+    mouseX > unitLength * columns ||
+    mouseY > unitLength * rows
+  ) {
     return;
   }
   const x = Math.floor(mouseX / unitLength);
@@ -227,20 +236,33 @@ function mousePressed() {
 }
 
 function tempBox() {
+  let x = Math.floor(mouseX / unitLength);
+  let y = Math.floor(mouseY / unitLength);
+
+
   // console.log(tempcheck)
   if (tempcheck) {
   } else {
-    // console.log("hi")
+    // console.log("hi:",hi)
     /* have bug! (if I zoom in and zoom out my chrome bug can fix  */
+
     if (mouseX > unitLength * columns || mouseY > unitLength * rows) {
+      console.log("colums",columns)
+      console.log("row",rows)
       for (let i = 0; i < columns; i++) {
         for (let j = 0; j < rows; j++) {
           currentBoard[i][j][2] = 0;
         }
       }
     } else {
-      let x = Math.floor(mouseX / unitLength);
-      let y = Math.floor(mouseY / unitLength);
+      if (x < 0 || y < 0) {
+        for (let i = 0; i < columns; i++) {
+          for (let j = 0; j < rows; j++) {
+            currentBoard[i][j][2] = 0;
+          }
+        }
+        return;
+      }
 
       for (let i = 0; i < columns; i++) {
         for (let j = 0; j < rows; j++) {
@@ -359,7 +381,7 @@ function keyboardMode() {
       // console.log(rightCount)
       // console.log(upCount)
       if (key === "d") {
-        currentBoard[rightCount][upCount][2] = 0;
+        currentBoard[rightCoqunt][upCount][2] = 0;
         rightCount += 1;
         console.log(rightCount);
         currentBoard[rightCount][upCount][2] = 1;
@@ -393,8 +415,8 @@ function keyboardMode() {
       } else if (key == "q") {
         tempcheck = false;
         playCheck = true;
-        rightCount=0
-        upCount =0
+        rightCount = 0;
+        upCount = 0;
       }
     }
   } else {
