@@ -150,28 +150,6 @@ function generate() {
           }
         }
 
-        // // Rules of Life
-        // if (currentBoard[x][y][0] == 1 && neighbors < 2) {
-        //   // Die of Loneliness
-        //   nextBoard[x][y][0] = 0;
-        //   nextBoard[x][y][1] = 0;
-        //   nextBoard[x][y][2] = 0;
-        // } else if (currentBoard[x][y][0] == 1 && neighbors > 3) {
-        //   // Die of Overpopulation
-        //   nextBoard[x][y][0] = 0;
-        //   nextBoard[x][y][1] = 0;
-        //   nextBoard[x][y][2] = 0;
-        // } else if (currentBoard[x][y][0] == 0 && neighbors == 3) {
-        //   // New life due to Reproduction
-        //   nextBoard[x][y][0] = 1;
-        //   nextBoard[x][y][1] = 0;
-        // } else {
-        //   // Stasis
-        //   nextBoard[x][y][0] = currentBoard[x][y][0];
-        //   nextBoard[x][y][1] = currentBoard[x][y][1];
-        //   nextBoard[x][y][1] += 1;
-        // }
-
         if (currentBoard[x][y][0] == 1) {
           if (neighbors < minPeople) {
             nextBoard[x][y][0] = 0;
@@ -239,16 +217,14 @@ function tempBox() {
   let x = Math.floor(mouseX / unitLength);
   let y = Math.floor(mouseY / unitLength);
 
-
   // console.log(tempcheck)
   if (tempcheck) {
   } else {
-    // console.log("hi:",hi)
     /* have bug! (if I zoom in and zoom out my chrome bug can fix  */
 
     if (mouseX > unitLength * columns || mouseY > unitLength * rows) {
-      console.log("colums",columns)
-      console.log("row",rows)
+      console.log("colums", columns);
+      console.log("row", rows);
       for (let i = 0; i < columns; i++) {
         for (let j = 0; j < rows; j++) {
           currentBoard[i][j][2] = 0;
@@ -269,7 +245,6 @@ function tempBox() {
           currentBoard[i][j][2] = 0;
         }
       }
-      // console.log(x);
       currentBoard[x][y][2] = 1;
     }
   }
@@ -318,8 +293,6 @@ function saveP() {
 
         console.log(saveX, saveY);
         playCheck = true;
-
-        // console.log( currentBoard[x][y])
       } else {
       }
     }
@@ -339,17 +312,11 @@ function saveP() {
 function loadP() {
   init();
   let count = 0;
-  // console.log(patternsName)
   playCheck = false;
 
   for (const [key, value] of Object.entries(patterns)) {
-    // console.log(key)
-    // console.log(patternsName)
     if (patternsName == key) {
-      // console.log(count)
-
       let firstValue = Object.values(patterns)[count];
-      // console.log(firstValue[0]);
 
       for (let i = 0; i <= firstValue[0].length - 1; i++) {
         let x = firstValue[0][i];
@@ -376,10 +343,7 @@ function keyboardMode() {
 
     currentBoard[rightCount][upCount][2] = 1;
     keyTyped();
-    // conddsole.log(key)
     function keyTyped() {
-      // console.log(rightCount)
-      // console.log(upCount)
       if (key === "d") {
         currentBoard[rightCoqunt][upCount][2] = 0;
         rightCount += 1;
@@ -466,12 +430,10 @@ document
 
 /*------------------------------------------ Rules of Life----------------------------------*/
 document.querySelector("#minPeople").addEventListener("change", function () {
-  // tempMinPeople = minPeople
   minPeople = parseInt(this.value);
 });
 
 document.querySelector("#maxPeople").addEventListener("change", function () {
-  // tempMaxPeople = maxPeople
   maxPeople = parseInt(this.value);
 });
 

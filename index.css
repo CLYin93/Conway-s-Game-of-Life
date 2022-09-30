@@ -1,11 +1,11 @@
-#main{
+#main {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #canvas {
-width: auto;
+  width: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +24,8 @@ width: auto;
   border-radius: 15px;
   font-size: 18px;
 }
-.game-pause{
+
+.game-pause {
   background-color: #b94b01;
   border: none;
   color: white;
@@ -36,7 +37,7 @@ width: auto;
 
 }
 
-.game-run{
+.game-run {
   background-color: #08bb2f;
   border: none;
   color: white;
@@ -52,16 +53,7 @@ width: auto;
 
 
 
-/* #pause-game {
-  background-color: #7B90D2;
-  border: none;
-  color: white;
-  padding: 16px 28px;
-  text-decoration: none;
-  border: 2px solid #FEDFE1;
-  border-radius: 15px;
-  font-size: 25px;
-} */
+
 #saveP {
   background-color: #5DAC81;
   border: none;
@@ -72,6 +64,7 @@ width: auto;
   border-radius: 15px;
   font-size: 25px;
 }
+
 #loadP {
   background-color: #8F77B5;
   border: none;
@@ -82,6 +75,7 @@ width: auto;
   border-radius: 15px;
   font-size: 25px;
 }
+
 #loadPS {
   background-color: #60373E;
   border: none;
@@ -92,6 +86,7 @@ width: auto;
   border-radius: 15px;
   font-size: 15px;
 }
+
 #PatternName {
   background-color: #FCFAF2;
   border: none;
@@ -103,19 +98,7 @@ width: auto;
   font-size: 20px;
 }
 
-.RandomDiv{
-  background-color: #FCFAF2;
-  border: none;
-  color: #52433D;
-  padding: 16px 28px;
-  text-decoration: none;
-  border: 2px solid#91989F;
-  border-radius: 15px;
-  font-size: 20px;
-
-}
-.frameRateControl{
-
+.RandomDiv {
   background-color: #FCFAF2;
   border: none;
   color: #52433D;
@@ -127,24 +110,24 @@ width: auto;
 
 }
 
-/* 
-#randomCreate {
+.frameRateControl {
+
   background-color: #FCFAF2;
   border: none;
   color: #52433D;
-  padding: 5px ;
+  padding: 16px 28px;
   text-decoration: none;
   border: 2px solid#91989F;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 20px;
 
-} */
+}
 
 #randomCreate {
   background-color: #592C63;
   border: none;
   color: white;
-  padding: 5px ;
+  padding: 5px;
   text-decoration: none;
   border: 2px solid#91989F;
   border-radius: 5px;
@@ -153,10 +136,10 @@ width: auto;
 }
 
 .minPeopleA {
-  background-color:#F7C242;
+  background-color: #F7C242;
   border: none;
   color: rgb(0, 0, 0);
-  padding: 10px ;
+  padding: 10px;
   text-decoration: none;
   border: 2px solid#91989F;
   border-radius: 5px;
@@ -168,7 +151,7 @@ width: auto;
   background-color: #74673E;
   border: none;
   color: white;
-  padding: 10px ;
+  padding: 10px;
   text-decoration: none;
   border: 2px solid#91989F;
   border-radius: 5px;
@@ -180,18 +163,18 @@ width: auto;
   background-color: #E9CD4C;
   border: none;
   color: rgb(0, 0, 0);
-  padding: 10px ;
+  padding: 10px;
   text-decoration: none;
   border: 2px solid#91989F;
   border-radius: 5px;
   font-size: 20px;
 
 }
- 
 
 
 
-#keyboardMode{
+
+#keyboardMode {
   background-color: #60373E;
   border: none;
   color: white;
@@ -208,10 +191,7 @@ width: auto;
 
 
 body {
-    background-image: url('background_pattern_2x-100.jpg');
-    background-repeat: no-repeat;
+  background-image: url('background_pattern_2x-100.jpg');
+  background-repeat: no-repeat;
 
 }
-
-
-
